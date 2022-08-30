@@ -9,9 +9,9 @@ router.get('/', async (req, res, next) => {
 
 	res.json({
 	status: true,
-	creator: `${creator}`,
+	creator: "Shefin",
 	runtime: runtime(process.uptime()),
-	visitor: hits.value,
+	visitor: hits.value
 
 	})
 
