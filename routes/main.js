@@ -1,24 +1,11 @@
-__path = process.cwd()
-
-//_______________________ ┏  Info  ┓ _______________________\\
-//
-//   Credit : AlipBot
-//   
-//   Note 
-//   Jangan Jual SC ini ,
-//   Jangan Buang Text ini,
-//   Siapa Mahu Upload Jangan Lupa Credit :),
-//   Siapa Tidak Letak Credit Akan Ambil Tindakan
-//   
-//_______________________ ┏ Make By AlipBot ┓ _______________________\\
-
 var express = require('express');
 var router = express.Router();
-const { runtime,fetchJson } = require('../lib/myfunc')
+const { runtime,fetchJson } = require('../lib')
+__path = process.cwd()
 
-router.get('/statistic', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
 
-	let hits = await fetchJson('https://api.countapi.xyz/hit/rest-api-alip.herokuapp.com/visitor')
+	let hits = await fetchJson('https://api.countapi.xyz/hit/api-alexa.herokuapp.com/visitor')
 
 	res.json({
 	status: true,
@@ -28,14 +15,6 @@ router.get('/statistic', async (req, res, next) => {
 
 	})
 
-})
-
-router.get('/', (req, res) => {
-    res.sendFile(__path + '/view/home.html')
-})
-
-router.get('/docs', (req, res) => {
-    res.sendFile(__path + '/view/docs.html')
 })
 
 module.exports = router
