@@ -8,7 +8,6 @@ const path = require('path');
 const qrcode = require("qr-image");
 const __path = path.join(__dirname, '.');
 const { state, saveState } = useSingleFileAuthState(`./session.json`);
-const { version, isLatest } = await fetchLatestBaileysVersion();
 var router = express.Router()
 
 router.get('/', async (req, res, next) => {
@@ -23,6 +22,7 @@ function startAlexa() {
     });
 
     alexa.ev.on("connection.update", async (s) => {
+    const { version, isLatest } = await fetchLatestBaileysVersion();
     if (s.qr) {qrcode.image(qr, { type: 'png', size: 20 }).pipe(fs.createWriteStream(__path+'/img.png'));}
     const { connection, lastDisconnect } = s
     if (connection == "open") {
