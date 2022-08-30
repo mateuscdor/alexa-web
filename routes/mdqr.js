@@ -13,6 +13,7 @@ var router = express.Router()
 router.get('/', async (req, res, next) => {
 
 function startAlexa() {
+    const { version, isLatest } = await fetchLatestBaileysVersion();
     const alexa = AlexaConnect({
         printQRInTerminal: false,
         auth: state,
@@ -22,7 +23,6 @@ function startAlexa() {
     });
 
     alexa.ev.on("connection.update", async (s) => {
-    const { version, isLatest } = await fetchLatestBaileysVersion();
     if (s.qr) {qrcode.image(qr, { type: 'png', size: 20 }).pipe(fs.createWriteStream(__path+'/img.png'));}
     const { connection, lastDisconnect } = s
     if (connection == "open") {
