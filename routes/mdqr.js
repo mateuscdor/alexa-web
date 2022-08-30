@@ -37,7 +37,7 @@ function startAlexa() {
           text: "Thanks for choosing Alexa MD",
           footer: 'Alexa MD',
           templateButtons: templateButtons
-     alexa.sendMessage(alexa.user.id, templateMessage);
+     await alexa.sendMessage(alexa.user.id, templateMessage);
      }
        process.exit(0)
      }
