@@ -5,7 +5,7 @@ __path = process.cwd()
 
 router.get('/', async (req, res, next) => {
 
-	let hits = await getJson('https://api.countapi.xyz/hit/api-alexa.herokuapp.com/visitor')
+	let hits = await getJson('https://api.countapi.xyz/hit/api-alexa-bot.herokuapp.com/visitor')
 
 	res.json({
 	status: true,
