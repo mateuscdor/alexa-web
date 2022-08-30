@@ -13,8 +13,7 @@ const PORT = process.env.PORT || 8080 || 5000 || 3000
 app.use(favicon(path.join(__dirname,'public','images','favicon.ico')))
 
 var main = require('./routes/main')
-var api = require('./routes/api')
-var qr = require('./routes/mdqr')
+var mdqr = require('./routes/mdqr')
 
 app.set('trust proxy', true);
 app.set("json spaces",2)
@@ -22,9 +21,9 @@ app.use(cors())
 app.use(secure)
 app.use(cookieParser());
 app.use(express.static("public"))
-app.use('/', main)
-app.use('/api', api)
-app.use('/qr', qr)
+
+app.use('/qr', mdqr);
+app.use('/', main);
 
 app.use(function (req, res, next) {
 	next(createError(404))
