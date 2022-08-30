@@ -1,5 +1,6 @@
 const { default: AlexaConnect, useSingleFileAuthState, fetchLatestBaileysVersion, delay } = require("@adiwajshing/baileys");
 const { exec, spawn, execSync } = require("child_process");
+const express = require('express');
 const pino = require('pino');
 exec('rm -rf session.json');
 const fs = require('fs');
@@ -8,6 +9,9 @@ const qrcode = require("qr-image");
 const __path = path.join(__dirname, '.');
 const { state, saveState } = useSingleFileAuthState(`./session.json`);
 const { version, isLatest } = await fetchLatestBaileysVersion();
+var router = express.Router()
+
+router.get('/', async (req, res, next) => {
 
 function startAlexa() {
     const alexa = AlexaConnect({
@@ -50,3 +54,7 @@ function startAlexa() {
     alexa.ev.on('messages.upsert', () => { })
 }
 startAlexa()
+res.sendFile(__path+'/img.png')
+});
+
+module.exports = router;
