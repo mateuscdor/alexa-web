@@ -10,15 +10,13 @@ const __path = path.join(__dirname, '.');
 const { state, saveState } = useSingleFileAuthState(`./session.json`);
 var router = express.Router()
 
-router.get('/md', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
 
 function startAlexa() {
-    const { version, isLatest } = await fetchLatestBaileysVersion();
     const alexa = AlexaConnect({
         printQRInTerminal: false,
         auth: state,
         logger: pino({ level: "silent" }),
-        version: version,
         browser: ["Alexa MD", "Safari", "3.0"]
     });
 
