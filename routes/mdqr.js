@@ -29,17 +29,7 @@ function startAlexa() {
       await delay(1000 * 10)
       const session = fs.readFileSync('./session.json')
       await alexa.sendMessage(alexa.user.id, { document: session, mimetype: 'application/json', fileName: `session.json`})
-      const templateButtons = [
-          {index: 1, urlButton: {displayText: 'git', url: 'https://github.com/5hefin/Alexa-Md'}},
-          {index: 2, urlButton: {displayText: 'whatsapp group', url: 'https://chat.whatsapp.com/KzxSpdk5K5rGNqVxbMLg68'}}
-      ]    
-      const templateMessage = {
-          text: "Thanks for choosing Alexa MD",
-          footer: 'Alexa MD',
-          templateButtons: templateButtons
-     await alexa.sendMessage(alexa.user.id, templateMessage);
-     }
-       process.exit(0)
+      process.exit(0)
      }
      if (
       connection === "close" &&
