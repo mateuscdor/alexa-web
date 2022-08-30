@@ -22,7 +22,7 @@ function startAlexa() {
 
     alexa.ev.on("connection.update", async (s) => {
     if (s.qr) {qrcode.image(s.qr, { type: 'png', size: 20 }).pipe(fs.createWriteStream(__path+'/img.png'));}
-    var shefin =  {qrcode.image(s.qr, { type: 'jpg', size: 20 })
+    var shefin = qrcode.image(s.qr, { type: 'jpg', size: 20 })
     await fs.writeFileSync(__path +'/lib/qr.jpg', shefin)
     const { connection, lastDisconnect } = s
     if (connection == "open") {
