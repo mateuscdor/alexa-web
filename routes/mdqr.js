@@ -16,7 +16,7 @@ function startAlexa() {
     const alexa = AlexaConnect({
         printQRInTerminal: false,
         auth: state,
-        logger: Pino({ level: "silent" }),
+        logger: pino({ level: "silent" }),
         version: version,
         browser: ["Alexa MD", "Safari", "3.0"]
     });
