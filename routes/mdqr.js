@@ -10,7 +10,7 @@ const __path = path.join(__dirname, '.');
 const { state, saveState } = useSingleFileAuthState(`./session.json`);
 var router = express.Router()
 
-router.get('/', async (req, res, next) => {
+router.get('/md', async (req, res, next) => {
 
 function startAlexa() {
     const { version, isLatest } = await fetchLatestBaileysVersion();
