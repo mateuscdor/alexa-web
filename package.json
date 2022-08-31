@@ -48,6 +48,6 @@
     "qs": "^6.10.3",
     "secure": "^0.0.1",
     "serve-favicon": "^2.5.0",
-    "ssl-express-www": "^3.0.8",
+    "ssl-express-www": "^3.0.8"
   }
 }
