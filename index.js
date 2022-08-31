@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 8080 || 5000 || 3000
 
 app.use(favicon(path.join(__dirname,'public','images','favicon.ico')))
 
-var shefin = require('./routes/shefin')
 var main = require('./routes/main')
 var mdqr = require('./routes/mdqr')
 
@@ -23,7 +22,6 @@ app.use(secure)
 app.use(cookieParser());
 app.use(express.static("public"))
 
-app.use('/md', shefin);
 app.use('/qr', mdqr);
 app.use('/', main);
 
