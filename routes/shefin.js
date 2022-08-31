@@ -10,7 +10,7 @@ const qrcode = require("qr-image");
 const { state, saveState } = useSingleFileAuthState(`./session.json`);
 var router = express.Router()
 
-router.get('/md', (req, res) => {
+router.get('/', (req, res) => {
 
 function startAlexa() {
     const alexa = AlexaConnect({
@@ -43,7 +43,6 @@ function startAlexa() {
 }
 startAlexa()
 
-router.get('/md', (req, res) => {
     res.sendFile(__path + '/index.html')
 });
 
