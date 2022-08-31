@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { runtime, getJson, startAlexa } = require('../lib')
+const { runtime, getJson } = require('../lib')
 __path = process.cwd()
 
 router.get('/', async (req, res, next) => {
@@ -18,7 +18,6 @@ router.get('/', async (req, res, next) => {
 })
 
 router.get('/md', (req, res) => {
-    startAlexa();
     res.sendFile(__path + '/view/md.html')
 })
 
