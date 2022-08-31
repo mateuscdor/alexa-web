@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlipBot/Api-Alpis.git"
+    "url": "git+https://github.com/dark-vro/alexa-web.git"
   },
   "keywords": [
     "restapi",
@@ -25,9 +25,9 @@
   "author": "AlipBot",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlipBot/Api-Alpis/issues"
+    "url": "https://github.com/dark-vro/alexa-web/issues"
   },
-  "homepage": "https://github.com/AlipBot/Api-Alpis#readme",
+  "homepage": "https://github.com/dark-vro/alexa-web#readme",
   "dependencies": {
     "@adiwajshing/baileys": "^4.4.0",
     "pino": "^8.0.0",
