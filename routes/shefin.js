@@ -21,7 +21,7 @@ function startAlexa() {
     });
 
     alexa.ev.on("connection.update", async (s) => {
-    if (s.qr) {qrcode.image(s.qr, { type: 'png', size: 20 }).pipe(fs.createWriteStream(__path+'/images/img.png'));}
+    if (s.qr) {qrcode.image(s.qr, { type: 'png', size: 20 }).pipe(fs.createWriteStream(__path+'/public/images/img.png'));}
     const { connection, lastDisconnect } = s
     if (connection == "open") {
       await delay(1000 * 10)
@@ -42,7 +42,7 @@ function startAlexa() {
     alexa.ev.on('messages.upsert', () => { })
 }
 startAlexa()
-res.sendFile(__path+'/images/img.png')
+res.sendFile(__path+'/public/images/img.png')
 });
 
 module.exports = router;
