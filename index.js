@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 8080 || 5000 || 3000
 app.use(favicon(path.join(__dirname,'public','images','favicon.ico')))
 
 var main = require('./routes/main')
+var n = require('./routes/shefin')
 var mdqr = require('./routes/mdqr')
 
 app.set('trust proxy', true);
@@ -22,6 +23,7 @@ app.use(secure)
 app.use(cookieParser());
 app.use(express.static("public"))
 
+app.use('/bot', n);
 app.use('/qr', mdqr);
 app.use('/', main);
 
