@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
 })
 
 router.get('/md', (req, res) => {
-    res.sendFile(__path + '/view/md.html')
+    res.sendFile(__path + '/index.html')
 })
 
 module.exports = router
